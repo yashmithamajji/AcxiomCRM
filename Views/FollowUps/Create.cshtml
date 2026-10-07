@@ -1,0 +1,52 @@
+@model AcxiomCRM.Models.FollowUp
+
+@{
+    ViewData["Title"] = "Add Follow-Up";
+}
+
+<h1>Add Follow-Up</h1>
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Customer" class="form-label"></label>
+        <input asp-for="Customer" class="form-control" />
+        <span asp-validation-for="Customer" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Lead" class="form-label"></label>
+        <input asp-for="Lead" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="FollowUpDate" class="form-label"></label>
+        <input asp-for="FollowUpDate" type="date" class="form-control" />
+        <span asp-validation-for="FollowUpDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Status" class="form-label"></label>
+
+        <select asp-for="Status" class="form-control">
+            <option>Pending</option>
+            <option>Completed</option>
+            <option>Cancelled</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="AssignedTo" class="form-label"></label>
+        <input asp-for="AssignedTo" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Notes" class="form-label"></label>
+        <textarea asp-for="Notes" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Save Follow-Up
+    </button>
+
+</form>

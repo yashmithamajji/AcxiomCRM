@@ -1,0 +1,45 @@
+@model AcxiomCRM.Models.Customer
+
+@{
+    ViewData["Title"] = "Add Customer";
+}
+
+<h1>Add Customer</h1>
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Company" class="form-label"></label>
+        <input asp-for="Company" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Status" class="form-label"></label>
+        <select asp-for="Status" class="form-control">
+            <option>Active</option>
+            <option>Inactive</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Customer</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>

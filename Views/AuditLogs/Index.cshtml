@@ -1,0 +1,36 @@
+@model IEnumerable<AcxiomCRM.Models.AuditLog>
+
+@{
+    ViewData["Title"] = "Audit Logs";
+}
+
+<h1>Audit Logs</h1>
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Action</th>
+            <th>Entity</th>
+            <th>Record</th>
+            <th>Date</th>
+            <th>IP Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.UserId</td>
+                <td>@log.Action</td>
+                <td>@log.EntityName</td>
+                <td>@log.RecordId</td>
+                <td>@log.CreatedDate</td>
+                <td>@log.IpAddress</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

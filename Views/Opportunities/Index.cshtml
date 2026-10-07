@@ -1,0 +1,49 @@
+@model IEnumerable<AcxiomCRM.Models.Opportunity>
+
+@{
+    ViewData["Title"] = "Opportunities";
+}
+
+<h1>Opportunities</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add Opportunity</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="input-group mb-3">
+        <input name="search"
+               class="form-control"
+               placeholder="Search opportunity, customer, stage or status" />
+        <button class="btn btn-secondary">Search</button>
+    </div>
+</form>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Customer</th>
+            <th>Amount</th>
+            <th>Probability</th>
+            <th>Stage</th>
+            <th>Status</th>
+            <th>Expected Close</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var opportunity in Model)
+        {
+            <tr>
+                <td>@opportunity.Name</td>
+                <td>@opportunity.Customer</td>
+                <td>₹@opportunity.Amount</td>
+                <td>@opportunity.Probability%</td>
+                <td>@opportunity.Stage</td>
+                <td>@opportunity.Status</td>
+                <td>@opportunity.ExpectedCloseDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

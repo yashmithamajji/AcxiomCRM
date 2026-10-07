@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>CRM Dashboard</h1>
+
+<div class="row">
+
+    <div class="col-md-3 mb-3">
+        <div class="card p-3">
+            <h5>Total Customers</h5>
+            <h2>@ViewBag.TotalCustomers</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card p-3">
+            <h5>Total Leads</h5>
+            <h2>@ViewBag.TotalLeads</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card p-3">
+            <h5>Open Leads</h5>
+            <h2>@ViewBag.OpenLeads</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card p-3">
+            <h5>Total Opportunities</h5>
+            <h2>@ViewBag.TotalOpportunities</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card p-3">
+            <h5>Open Opportunities</h5>
+            <h2>@ViewBag.OpenOpportunities</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card p-3">
+            <h5>Won Opportunities</h5>
+            <h2>@ViewBag.WonOpportunities</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card p-3">
+            <h5>Lost Opportunities</h5>
+            <h2>@ViewBag.LostOpportunities</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card p-3">
+            <h5>Pipeline Value</h5>
+            <h2>₹@ViewBag.PipelineValue</h2>
+        </div>
+    </div>
+
+</div>

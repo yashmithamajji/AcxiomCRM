@@ -1,0 +1,40 @@
+@model IEnumerable<AcxiomCRM.Models.FollowUp>
+
+@{
+    ViewData["Title"] = "Follow Ups";
+}
+
+<h1>Follow Ups</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add Follow-Up</a>
+</p>
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Lead</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Assigned To</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Customer</td>
+                <td>@item.Lead</td>
+                <td>@item.FollowUpDate.ToShortDateString()</td>
+                <td>@item.Status</td>
+                <td>@item.AssignedTo</td>
+                <td>@item.Notes</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
